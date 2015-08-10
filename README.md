@@ -6,6 +6,7 @@ A small gem to use AdvisorsCommand in a ruby application.
 * Simple Virtus POROs for models.
 
 ![Meek Miller Approved](https://media.licdn.com/media/p/4/000/15b/136/0248efb.jpg)
+**Mike Miller Approved**
 
 ## Installation
 

@@ -5,6 +5,8 @@ A small gem to use AdvisorsCommand in a ruby application.
 * Full support for WSSE authentication.
 * Simple Virtus POROs for models.
 
+![Meek Miller Approved](https://media.licdn.com/media/p/4/000/15b/136/0248efb.jpg)
+
 ## Installation
 
 Add this line to your application's Gemfile:

@@ -1,8 +1,9 @@
 # MeekMiller
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/meek_miller`. To experiment with that code, run `bin/console` for an interactive prompt.
+A small gem to use AdvisorsCommand in a ruby application.
 
-TODO: Delete this and the text above, and describe your gem
+* Full support for WSSE authentication.
+* Simple Virtus POROs for models.
 
 ## Installation
 
@@ -22,7 +23,20 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Create a client:
+```ruby
+  $advisors_client = MeekMiller::Client.new(username, api_key)
+```
+
+Use that client:
+```ruby
+  $advisors_client.search("Bob")
+```
+
+```ruby
+  $advisors_client.contact(1234)
+```
+
 
 ## Development
 
@@ -32,8 +46,8 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/meek_miller/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
+1. Fork it ( https://github.com/RepPro/meek_miller/fork )
+2. Create your feature branch (`git checkout -b f/my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
+4. Push to the branch (`git push origin f/my-new-feature`)
 5. Create a new Pull Request

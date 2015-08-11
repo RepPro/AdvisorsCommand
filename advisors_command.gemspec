@@ -23,8 +23,8 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "pry"
   spec.add_dependency "akami", "~> 1.3"
-  spec.add_dependency "typhoeus", "~> 0.7"
-  spec.add_dependency "faraday", "~> 0.9"
-  spec.add_dependency "faraday_middleware", "~> 0.9"
-  spec.add_dependency "virtus", "~> 1.0"
+  spec.add_dependency "typhoeus"
+  spec.add_dependency "faraday"
+  spec.add_dependency "faraday_middleware"
+  spec.add_dependency "virtus"
 end

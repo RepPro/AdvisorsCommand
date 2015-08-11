@@ -1,4 +1,4 @@
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in meek_miller.gemspec
+# Specify your gem's dependencies in advisors_command.gemspec
 gemspec

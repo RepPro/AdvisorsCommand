@@ -1,20 +1,16 @@
-# MeekMiller
+# Advisors Command
 
 A small gem to use AdvisorsCommand in a ruby application.
 
 * Full support for WSSE authentication.
 * Simple Virtus POROs for models.
 
-![Meek Miller Approved](https://media.licdn.com/media/p/4/000/15b/136/0248efb.jpg)
-
-**Mike Miller Approved**
-
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'meek_miller'
+gem 'advisors_command'
 ```
 
 And then execute:
@@ -23,13 +19,13 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install meek_miller
+    $ gem install advisors_command
 
 ## Usage
 
 Create a client:
 ```ruby
-  $advisors_client = MeekMiller::Client.new(username, api_key)
+  $advisors_client = AdvisorsCommand::Client.new(username, api_key)
 ```
 
 Use that client:
@@ -50,7 +46,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-1. Fork it ( https://github.com/RepPro/meek_miller/fork )
+1. Fork it ( https://github.com/RepPro/advisors_command/fork )
 2. Create your feature branch (`git checkout -b f/my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin f/my-new-feature`)

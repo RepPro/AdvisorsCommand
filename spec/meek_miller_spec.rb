@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe MeekMiller do
+describe AdvisorsCommand do
   it 'has a version number' do
-    expect(MeekMiller::VERSION).not_to be nil
+    expect(AdvisorsCommand::VERSION).not_to be nil
   end
 
   it 'does something useful' do

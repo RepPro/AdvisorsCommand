@@ -1,17 +1,17 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'meek_miller/version'
+require 'advisors_command/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "meek_miller"
-  spec.version       = MeekMiller::VERSION
+  spec.name          = "advisors_command"
+  spec.version       = AdvisorsCommand::VERSION
   spec.authors       = ["Christopher Ostrowski"]
   spec.email         = ["chris@madebyfunction.com"]
 
   spec.summary       = %q{Ruby Client for integrating with Advisors Command CRM}
   # spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "https://github.com/RepPro/MeekMiller"
+  spec.homepage      = "https://github.com/RepPro/AdvisorsCommand"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }

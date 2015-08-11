@@ -1,4 +1,4 @@
-module MeekMiller
+module AdvisorsCommand
   module Models
     class Contact < MeekModel
       attribute :id, Integer

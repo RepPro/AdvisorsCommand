@@ -12,7 +12,7 @@ module AdvisorsCommand
             self.find(obj['record_id'].to_i)
           end.compact
         else
-          raise SearchException, "Error connecting to advisors command."
+          raise ::AdvisorsCommand::SearchException, "Error connecting to advisors command."
         end
       end
 

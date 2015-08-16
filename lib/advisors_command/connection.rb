@@ -1,3 +1,4 @@
+require 'parallel'
 require 'akami'
 require 'faraday'
 require 'faraday_middleware'

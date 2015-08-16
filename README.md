@@ -28,13 +28,15 @@ Create a client:
   $advisors_client = AdvisorsCommand::Client.new(username, api_key)
 ```
 
-Use that client:
+### Contacts
+Find contacts, returns a collection of `Model::Contact`
 ```ruby
-  $advisors_client.search("Bob")
+  $advisors_client.contacts.search("Bob")
 ```
 
+Find a single contact, returns a `Model::Contact`
 ```ruby
-  $advisors_client.contact(1234)
+  $advisors_client.contacts.find(1234)
 ```
 
 

@@ -13,6 +13,11 @@ module AdvisorsCommand
 
       attribute :emails, Array[String]
       attribute :phones, Array[String]
+
+
+      def full_name
+        [first_name, middle_name, last_name].compact.join(' ')
+      end
     end
   end
 end

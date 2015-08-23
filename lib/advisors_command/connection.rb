@@ -5,7 +5,7 @@ require 'faraday_middleware'
 require 'typhoeus'
 require 'typhoeus/adapters/faraday'
 
-module AdvisorsCommand
+module AdvisorsCommandClient
   class Connection
     BASE_URL = "https://qa.advisorscommand.com/api/rest/v1"
 
@@ -17,7 +17,7 @@ module AdvisorsCommand
     def build
       Faraday.new(BASE_URL) do |faraday|
         faraday.request :url_encoded
-        faraday.use AdvisorsCommand::Connection::WsseAuth, @username, @api_key
+        faraday.use AdvisorsCommandClient::Connection::WsseAuth, @username, @api_key
         faraday.adapter :typhoeus
         faraday.response :json, content_type: /\bjson$/
       end 

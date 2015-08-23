@@ -1,4 +1,4 @@
-module AdvisorsCommand
+module AdvisorsCommandClient
   module Models
     class ContactCollection
       def initialize(args = {})
@@ -12,14 +12,14 @@ module AdvisorsCommand
             self.find(obj['record_id'].to_i)
           end.compact
         else
-          raise ::AdvisorsCommand::SearchError, "Error connecting to advisors command."
+          raise ::AdvisorsCommandClient::SearchError, "Error connecting to advisors command."
         end
       end
 
       def find(contact_id)
         resp = @connection.get("contacts/#{contact_id}")
         if resp.success?
-          return AdvisorsCommand::Models::Contact.load(resp.body)
+          return AdvisorsCommandClient::Models::Contact.load(resp.body)
         else
           return nil
         end

@@ -5,7 +5,7 @@ require 'advisors_command/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "advisors_command"
-  spec.version       = AdvisorsCommand::VERSION
+  spec.version       = AdvisorsCommandClient::VERSION
   spec.authors       = ["Christopher Ostrowski"]
   spec.email         = ["chris@madebyfunction.com"]
 

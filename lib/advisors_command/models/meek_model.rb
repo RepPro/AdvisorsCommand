@@ -1,4 +1,4 @@
-module AdvisorsCommand
+module AdvisorsCommandClient
   module Models
     class MeekModel
       include Virtus.model

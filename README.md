@@ -25,7 +25,7 @@ Or install it yourself as:
 
 Create a client:
 ```ruby
-  $advisors_client = AdvisorsCommand::Client.new(username, api_key)
+  $advisors_client = AdvisorsCommandClient::Client.new(username, api_key)
 ```
 
 ### Contacts

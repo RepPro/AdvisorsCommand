@@ -5,7 +5,7 @@ require 'advisors_command/models/meek_model'
 require 'advisors_command/models/contact'
 require 'advisors_command/models/contact_collection'
 
-module AdvisorsCommand
+module AdvisorsCommandClient
   class SearchError < ::StandardError
   end
 
@@ -13,7 +13,7 @@ module AdvisorsCommand
     attr_reader :connection
 
     def initialize(username, api_key)
-      @connection = AdvisorsCommand::Connection.new(username, api_key).build
+      @connection = AdvisorsCommandClient::Connection.new(username, api_key).build
     end
 
     def contacts

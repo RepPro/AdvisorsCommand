@@ -11,7 +11,7 @@ module AdvisorsCommandClient
 
   class Client
     TEST_URL = "https://qa.advisorscommand.com/api/rest/v1"
-    PROD_URL = "https://www.advisorscommand.com/api/rest/v1"
+    PROD_URL = "https://advisorscommand.com/api/rest/v1"
     attr_reader :connection
 
     def initialize(username, api_key, options = {})

@@ -1,7 +1,7 @@
 require 'virtus'
 require "advisors_command_client/version"
 require 'advisors_command_client/connection'
-require 'advisors_command_client/models/client'
+require 'advisors_command_client/models/base'
 require 'advisors_command_client/models/contact'
 require 'advisors_command_client/models/contact_collection'
 

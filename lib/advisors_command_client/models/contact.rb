@@ -1,6 +1,6 @@
 module AdvisorsCommandClient
   module Models
-    class Contact < MeekModel
+    class Contact < Base
       attribute :id, Integer
       attribute :nickname, String
       attribute :first_name, String

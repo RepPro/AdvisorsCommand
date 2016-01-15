@@ -1,6 +1,6 @@
 module AdvisorsCommandClient
   module Models
-    class Client
+    class Base
       include Virtus.model
 
       def self.load(hash)

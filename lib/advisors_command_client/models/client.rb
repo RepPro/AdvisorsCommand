@@ -1,6 +1,6 @@
 module AdvisorsCommandClient
   module Models
-    class MeekModel
+    class Client
       include Virtus.model
 
       def self.load(hash)

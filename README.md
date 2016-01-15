@@ -1,4 +1,4 @@
-# Advisors Command
+# Advisors Command Client
 
 A small gem to use AdvisorsCommand in a ruby application.
 

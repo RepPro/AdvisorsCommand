@@ -6,13 +6,15 @@ module AdvisorsCommandClient
       attribute :first_name, String
       attribute :middle_name, String
       attribute :last_name, String
-      attribute :gender
-      attribute :birthday
+      attribute :gender, String
+      attribute :birthday, DateTime
+      attribute :email, String
       attribute :created_at, DateTime
       attribute :updated_at, DateTime
 
-      attribute :emails, Array[String]
-      attribute :phones, Array[String]
+      attribute :emails, Array[Hash]
+      attribute :phones, Array[Hash]
+      attribute :addresses, Array[Hash]
 
 
       def full_name

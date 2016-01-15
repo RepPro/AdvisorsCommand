@@ -1,10 +1,10 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'advisors_command/version'
+require 'advisors_command_client/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "advisors_command"
+  spec.name          = "advisors_command_client"
   spec.version       = AdvisorsCommandClient::VERSION
   spec.authors       = ["Christopher Ostrowski"]
   spec.email         = ["chris@madebyfunction.com"]

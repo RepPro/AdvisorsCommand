@@ -11,10 +11,15 @@ module AdvisorsCommandClient
 
   class Client
     TEST_URL = "https://qa.advisorscommand.com/api/rest/v1"
+    PROD_URL = "https://www.advisorscommand.com/api/rest/v1"
     attr_reader :connection
 
-    def initialize(username, api_key, url = nil)
-      url ||= TEST_URL
+    def initialize(username, api_key, options = {})
+      if options[:live]
+        url = PROD_URL
+      else
+        url = TEST_URL
+      end
       @connection = AdvisorsCommandClient::Connection.new(username, api_key, url).build
     end
 

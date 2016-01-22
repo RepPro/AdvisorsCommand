@@ -19,7 +19,7 @@ module AdvisorsCommandClient
       def find(contact_id)
         resp = @connection.get("contacts/#{contact_id}")
         if resp.success?
-          return AdvisorsCommandClient::Models::Contact.load(resp.body)
+          return AdvisorsCommandClient::Models::Contact.load(resp.body, @connection)
         else
           return nil
         end

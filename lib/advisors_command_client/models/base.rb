@@ -3,8 +3,15 @@ module AdvisorsCommandClient
     class Base
       include Virtus.model
 
-      def self.load(hash)
-        new(deep_underscore_params(hash))
+      def self.load(hash, connection = nil)
+        hash = deep_underscore_params(hash)
+        new(hash, connection)
+      end
+
+      def initialize(args, connection = nil)
+        super(args)
+        @original_hash = args
+        @connection = connection
       end
 
       #JSON comes back as SnakeCase.

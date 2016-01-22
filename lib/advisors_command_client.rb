@@ -3,6 +3,7 @@ require "advisors_command_client/version"
 require 'advisors_command_client/connection'
 require 'advisors_command_client/models/base'
 require 'advisors_command_client/models/contact'
+require 'advisors_command_client/models/account'
 require 'advisors_command_client/models/contact_collection'
 
 module AdvisorsCommandClient
@@ -10,8 +11,8 @@ module AdvisorsCommandClient
   end
 
   class Client
-    TEST_URL = "https://qa.advisorscommand.com/api/rest/v1"
-    PROD_URL = "https://advisorscommand.com/api/rest/v1"
+    TEST_URL = "https://qa.advisorscommand.com/api/rest/latest"
+    PROD_URL = "https://advisorscommand.com/api/rest/latest"
     attr_reader :connection
 
     def initialize(username, api_key, options = {})

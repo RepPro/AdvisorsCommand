@@ -20,6 +20,17 @@ module AdvisorsCommandClient
       def full_name
         [first_name, middle_name, last_name].compact.join(' ')
       end
+
+      def accounts
+        @accounts ||= @original_hash['accounts'].map do |id|
+          resp = @connection.get("accounts/#{id}")
+          if resp.success?
+            AdvisorsCommandClient::Models::Account.load(resp.body)
+          else
+            nil
+          end
+        end
+      end
     end
   end
 end

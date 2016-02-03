@@ -8,8 +8,13 @@ module AdvisorsCommandClient
       def search(query)
         response = @connection.get('search', {search: query, from: 'orocrm_contact'})
         if response.success?
-          return Parallel.map(Array(response.body['data']), in_threads: 4) do |obj|
-            self.find(obj['record_id'].to_i)
+          return Array(response.body['data']).map do |obj|
+            begin
+              self.find(obj['record_id'].to_i)
+            rescue Faraday::Error::ParsingError
+              puts "Error parsing response for contact ID: #{obj['record_id']}"
+              next nil
+            end
           end.compact
         else
           raise ::AdvisorsCommandClient::SearchError, "Error connecting to advisors command."

@@ -8,8 +8,9 @@ module AdvisorsCommandClient
       def search(query)
         response = @connection.get('search', {search: query, from: 'orocrm_contact'})
         if response.success?
-          return Array(response.body['data']).map do |obj|
+          return Parallel.map(Array(response.body['data'])) do |obj|
             begin
+              next unless obj['record_string'].present?
               self.find(obj['record_id'].to_i)
             rescue Faraday::Error::ParsingError
               puts "Error parsing response for contact ID: #{obj['record_id']}"

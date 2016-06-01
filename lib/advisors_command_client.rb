@@ -1,3 +1,4 @@
+require 'awrence'
 require 'virtus'
 require "advisors_command_client/version"
 require 'advisors_command_client/connection'

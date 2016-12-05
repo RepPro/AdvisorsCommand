@@ -18,6 +18,17 @@ module AdvisorsCommandClient
           return false
         end
       end
+
+      def update(account_id, params)
+        account = AdvisorsCommandClient::Models::Account.new(params.merge(id: account_id))
+        resp = @connection.put("accounts/#{account_id}", { account: account.as_json })
+
+        if resp.success?
+          return account
+        else
+          return false
+        end
+      end
     end
   end
 end

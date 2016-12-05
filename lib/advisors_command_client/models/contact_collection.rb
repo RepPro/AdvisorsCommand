@@ -41,6 +41,17 @@ module AdvisorsCommandClient
           return false
         end
       end
+
+      def update(contact_id, params)
+        contact = AdvisorsCommandClient::Models::Contact.new(params.merge(id: contact_id))
+        resp = @connection.put("contacts/#{contact_id}", { contact: contact.as_json })
+
+        if resp.success?
+          return contact
+        else
+          return false
+        end
+      end
     end
   end
 end

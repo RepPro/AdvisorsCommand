@@ -28,4 +28,5 @@ Gem::Specification.new do |spec|
   spec.add_dependency "faraday_middleware"
   spec.add_dependency "virtus"
   spec.add_dependency 'parallel'
+  spec.add_dependency 'awrence'
 end

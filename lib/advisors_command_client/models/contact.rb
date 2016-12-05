@@ -33,6 +33,13 @@ module AdvisorsCommandClient
           end
         end
       end
+
+      def as_json
+        json_attrs = attributes.dup
+        json_attrs.delete(:nickname)
+        json_attrs.delete(:employer)
+        json_attrs.to_camelback_keys
+      end
     end
   end
 end

@@ -10,7 +10,7 @@ module AdvisorsCommandClient
         if response.success?
           return Parallel.map(Array(response.body['data'])) do |obj|
             begin
-              next unless obj['record_string'].present?
+              next unless obj['record_string']
               self.find(obj['record_id'].to_i)
             rescue Faraday::Error::ParsingError
               puts "Error parsing response for contact ID: #{obj['record_id']}"
@@ -31,6 +31,16 @@ module AdvisorsCommandClient
         end
       end
 
+      def create(params)
+        contact = AdvisorsCommandClient::Models::Contact.new(params)
+        resp = @connection.post("contacts", { contact: contact.as_json })
+        if resp.success?
+          contact.id = resp.body['id']
+          return contact
+        else
+          return false
+        end
+      end
     end
   end
 end

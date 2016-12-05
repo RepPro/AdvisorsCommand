@@ -16,11 +16,11 @@ module AdvisorsCommandClient
 
     def build
       Faraday.new(@url) do |faraday|
-        faraday.request :url_encoded
+        faraday.request :json
         faraday.use AdvisorsCommandClient::Connection::WsseAuth, @username, @api_key
         faraday.adapter :typhoeus
         faraday.response :json, content_type: /\bjson$/
-      end 
+      end
     end
 
     class WsseAuth < Faraday::Middleware

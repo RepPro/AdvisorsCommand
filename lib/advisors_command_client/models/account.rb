@@ -16,9 +16,18 @@ module AdvisorsCommandClient
       attribute :monthly_salary, Float
       attribute :monthly_expense, Float
       attribute :salary_increase_percent, Integer
+      attribute :name, String
+      attribute :state, String
 
       attribute :retirement_age, Integer
       attribute :marital_status, String
+
+      def as_json
+        json_attrs = attributes.dup
+        json_attrs.delete(:contact)
+        json_attrs.delete(:id)
+        json_attrs.select{|_, v| !v.nil?}.to_camelback_keys
+      end
     end
   end
 end

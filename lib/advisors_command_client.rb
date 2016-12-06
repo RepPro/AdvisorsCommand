@@ -3,6 +3,7 @@ require 'awrence'
 require "advisors_command_client/version"
 require 'advisors_command_client/connection'
 require 'advisors_command_client/models/base'
+require 'advisors_command_client/models/address'
 require 'advisors_command_client/models/contact'
 require 'advisors_command_client/models/account'
 require 'advisors_command_client/models/contact_collection'

@@ -18,11 +18,11 @@ module AdvisorsCommandClient
 
       attribute :emails, Array[Hash]
       attribute :phones, Array[Hash]
-      attribute :addresses, Array[Hash]
+      attribute :addresses, Array[Address]
 
 
       def full_name
-        [name_prefix, first_name, middle_name, last_name, name_suffix].reject(&:blank?).join(' ')
+        [name_prefix, first_name, middle_name, last_name, name_suffix].reject(&:nil?).join(' ')
       end
 
       def accounts
@@ -38,6 +38,13 @@ module AdvisorsCommandClient
         json_attrs = attributes.dup
         json_attrs.delete(:nickname)
         json_attrs.delete(:employer)
+        json_attrs.delete(:email)
+        json_attrs.delete(:id)
+        json_attrs.delete(:created_at)
+        json_attrs.delete(:updated_at)
+
+        json_attrs[:addresses] = addresses.map {|address| address.as_json }
+
         json_attrs.to_camelback_keys
       end
     end

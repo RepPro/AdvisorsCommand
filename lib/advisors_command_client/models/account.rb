@@ -23,10 +23,9 @@ module AdvisorsCommandClient
       attribute :marital_status, String
 
       def as_json
-        json_attrs = attributes.dup
-        json_attrs.delete(:contact)
-        json_attrs.delete(:id)
-        json_attrs.select{|_, v| !v.nil?}.to_camelback_keys
+        {
+          name: name
+        }
       end
     end
   end

@@ -33,7 +33,8 @@ module AdvisorsCommandClient
 
       def create(params)
         contact = AdvisorsCommandClient::Models::Contact.new(params)
-        resp = @connection.post("contacts", { contact: contact.as_json })
+        resp = @connection.post("contacts.json", { contact: contact.as_json })
+
         if resp.success?
           contact.id = resp.body['id']
           return contact
@@ -44,7 +45,7 @@ module AdvisorsCommandClient
 
       def update(contact_id, params)
         contact = AdvisorsCommandClient::Models::Contact.new(params.merge(id: contact_id))
-        resp = @connection.put("contacts/#{contact_id}", { contact: contact.as_json })
+        resp = @connection.put("contacts/#{contact_id}.json", { contact: contact.as_json })
 
         if resp.success?
           return contact

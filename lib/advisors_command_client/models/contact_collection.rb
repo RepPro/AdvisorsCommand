@@ -6,7 +6,7 @@ module AdvisorsCommandClient
       end
 
       def search(query)
-        response = @connection.get('search', {search: query, from: 'orocrm_contact'})
+        response = @connection.get('search', {search: query, from: 'oro_contact'})
         if response.success?
           return Parallel.map(Array(response.body['data'])) do |obj|
             begin
